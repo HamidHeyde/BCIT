@@ -25,8 +25,9 @@ app.use('*', function(req,res){
 })
 
 //Server
+var PORT = process.env.PORT || 7500;
 var http = require('http');
 var httpServer = http.createServer(app);
-httpServer.listen(7500, function(){
-    console.log(`Server is running on => port 7500`);
+httpServer.listen(PORT, function(){
+    console.log(`Server is running on => port ${PORT}`);
 })
