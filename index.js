@@ -15,6 +15,10 @@ app.post("/api/registerUser", function(req,res){
     res.status(200).send({"message":"You are in /api/getUsers => Method: POST"})
 })
 
+app.put("/api/updateUser", function(req,res){
+    res.status(200).send({"message":"You are in /api/updateUser => Method: UPDATE"})
+})
+
 //FrontEnd
 var path = require('path');
 app.use('/',express.static(path.join(__dirname,'src')));
@@ -26,6 +30,7 @@ app.use('*', function(req,res){
 
 //Server
 var PORT = process.env.PORT || 7500;
+
 var http = require('http');
 var httpServer = http.createServer(app);
 httpServer.listen(PORT, function(){
